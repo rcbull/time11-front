@@ -1,0 +1,8 @@
+.header-titular {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(-90deg,#ff585a,#f857a5);
+    height: 100px;
+}

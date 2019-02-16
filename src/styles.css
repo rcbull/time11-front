@@ -2,16 +2,21 @@
   position: relative;
 }
 
-.flex-horizontal,
-.flex-vertical {
+.logo {    
+  background: hsla(326, 79%, 32%, 1);
+  width: 80px;
+  height: 80px;
+  margin: 10px 20px;
+  border-radius: 50px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: 'Gilroy-Regular', sans-serif;
+  font-size: 48px;
 }
 
-.flex-horizontal {
-  flex-direction: column;
+@font-face {
+  font-family: 'GilroyRegular';
+  src: url(assets/font/Gilroy-Regular.ttf);
 }
-
-.flex-vertical {
-  flex-direction: row;
-}
-

@@ -28,6 +28,7 @@ export class MapaComponent implements OnInit {
         console.log(response);
       }
     );
+    
   }
 
   getEstabelecimentos(): Observable<any> {
@@ -43,5 +44,6 @@ export class MapaComponent implements OnInit {
         }
       }));
   }
-
+  
 }
+
