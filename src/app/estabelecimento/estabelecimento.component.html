@@ -1,3 +1,16 @@
-<p>
-  estabelecimento works!
-</p>
+<form [formGroup]="estabelecimentoForm" (ngSubmit)="save()">
+  <h5 *ngIf="success">Your form is valid!</h5>
+
+  <label>Nome</label>
+  <input type="text" formControlName="nome"><br/>
+  <label>CNPJ</label>
+  <input type="text" formControlName="cnpj"><br/>
+  <label>Categorias</label>
+  <select>
+    <option *ngFor="let cat of categorias" value={{cat.id}}>
+      {{cat.nome}}
+    </option>
+  </select>
+
+  <input type="submit" value="Salvar">
+</form>

@@ -6,6 +6,7 @@ import {EstabelecimentoComponent} from './estabelecimento/estabelecimento.compon
 import {ExtratoComponent} from './extrato/extrato.component';
 import {LoginComponent} from './login/login.component';
 import {TitularComponent} from './titular/titular.component';
+import {CobrancaComponent} from './cobranca/cobranca.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'titular',
     component: TitularComponent
+  },
+  {
+    path: 'cobranca',
+    component: CobrancaComponent
   },
   {
     path: '**',

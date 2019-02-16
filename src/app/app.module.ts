@@ -16,6 +16,7 @@ import { MovItemComponent } from './mov-item/mov-item.component';
 import { HeaderTitularComponent } from './titular/header-titular/header-titular.component';
 import { AgmCoreModule } from '@agm/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CobrancaComponent } from './cobranca/cobranca.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MapaComponent,
     HeaderComponent,
     MovItemComponent,
-    HeaderTitularComponent
+    HeaderTitularComponent,
+    CobrancaComponent
   ],
   imports: [
     BrowserModule,
