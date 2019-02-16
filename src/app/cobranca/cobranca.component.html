@@ -1,2 +1,14 @@
-<ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="value">
-</ngx-qrcode>
+<form [formGroup]="formCobranca" (ngSubmit)="saveCobranca()">
+  <label class="lbl-login" for="txbValor">Valor:</label>
+  <input id="txbValor" type="text" formControlName="valor"/>
+  <div class="btn-holder">
+    <button>Cobrar</button>
+  </div>
+  <br/>
+  <div *ngIf="mensagem" style="color: #ff0000">{{ mensagem }}</div>
+</form>
+
+<div *ngIf="qrCodeGenerated">
+  <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="value">
+  </ngx-qrcode>
+</div>
