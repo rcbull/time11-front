@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { MovItemComponent } from './mov-item/mov-item.component';
 import { HeaderTitularComponent } from './titular/header-titular/header-titular.component';
 import { AgmCoreModule } from '@agm/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AgmCoreModule } from '@agm/core';
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

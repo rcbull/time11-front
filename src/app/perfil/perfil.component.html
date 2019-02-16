@@ -1,3 +1,8 @@
-<p>
-  perfil works!
-</p>
+<form [formGroup]="perfilForm" (ngSubmit)="save()">
+  <h5 *ngIf="success">Your form is valid!</h5>
+
+  <input type="text" formControlName="nome">
+  <input type="text" formControlName="email">
+
+  <input type="submit" value="Send message">
+</form>
