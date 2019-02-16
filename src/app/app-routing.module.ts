@@ -33,7 +33,7 @@ const routes: Routes = [
   {
     path: 'titular',
     component: TitularComponent
-  },
+  }/*,
   {
     path: 'cobranca',
     component: CobrancaComponent
@@ -41,7 +41,7 @@ const routes: Routes = [
   {
     path: '**',
     component: LoginComponent
-  }];
+  }*/];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
