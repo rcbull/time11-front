@@ -14,6 +14,7 @@ import { MapaComponent } from './titular/mapa/mapa.component';
 import { HeaderComponent } from './header/header.component';
 import { MovItemComponent } from './mov-item/mov-item.component';
 import { HeaderTitularComponent } from './titular/header-titular/header-titular.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import { HeaderTitularComponent } from './titular/header-titular/header-titular.
     BrowserModule,
     AppRoutingModule,
     NgxQRCodeModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

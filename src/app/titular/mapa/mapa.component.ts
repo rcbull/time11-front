@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 
-declare const google: any;
+import { AgmCoreModule } from '@agm/core';
 
 @Component({
   selector: 'app-mapa',
@@ -12,21 +12,16 @@ declare const google: any;
   styleUrls: ['./mapa.component.css']
 })
 export class MapaComponent implements OnInit {
-  @ViewChild('gmap') gmapElement: any;
-  map: google.maps.Map;
+  texto : string = 'OnovoLab';
+  lat: number = -22.0220506;
+  lng: number = -47.8971017;
+  zoom: number = 15;
   estabelecimentos: any;
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
-    var mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-
     this.getEstabelecimentos().subscribe(
       response => {
 
