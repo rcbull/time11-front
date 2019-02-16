@@ -3,14 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {NgxQRCodeModule} from 'ngx-qrcode2';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ExtratoComponent } from './extrato/extrato.component';
+import { EstabelecimentoComponent } from './estabelecimento/estabelecimento.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PerfilComponent,
+    ExtratoComponent,
+    EstabelecimentoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxQRCodeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
