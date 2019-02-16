@@ -16,7 +16,7 @@ export class MapaComponent implements OnInit {
   lat: number = -22.0220506;
   lng: number = -47.8971017;
   zoom: number = 15;
-  estabelecimentos: any;
+  estabelecimentos = []
 
   constructor(private http: HttpClient) {
   }
@@ -28,6 +28,9 @@ export class MapaComponent implements OnInit {
         console.log(response);
       }
     );
+
+    this.estabelecimentos.push({lat: this.lat, lng: this.lng, label: this.texto})
+
     
   }
 

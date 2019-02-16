@@ -24,7 +24,7 @@ export class PerfilComponent implements OnInit {
 
   save(){
     this.submitted = true;
-    
+
     if (this.perfilForm.invalid) {
       return;
     }
