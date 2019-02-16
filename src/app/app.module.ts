@@ -9,6 +9,9 @@ import {PerfilComponent} from './perfil/perfil.component';
 import {ExtratoComponent} from './extrato/extrato.component';
 import {EstabelecimentoComponent} from './estabelecimento/estabelecimento.component';
 import {LoginComponent} from './login/login.component';
+import { TitularComponent } from './titular/titular.component';
+import { MapaComponent } from './titular/mapa/mapa.component';
+import { HeaderComponent } from './titular/header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import {LoginComponent} from './login/login.component';
     PerfilComponent,
     ExtratoComponent,
     EstabelecimentoComponent,
-    LoginComponent
+    LoginComponent,
+    TitularComponent,
+    MapaComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

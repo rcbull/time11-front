@@ -5,9 +5,18 @@ import {PerfilComponent} from './perfil/perfil.component';
 import {EstabelecimentoComponent} from './estabelecimento/estabelecimento.component';
 import {ExtratoComponent} from './extrato/extrato.component';
 import {LoginComponent} from './login/login.component';
+import {TitularComponent} from './titular/titular.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'perfil',
     component: PerfilComponent
@@ -21,8 +30,8 @@ const routes: Routes = [
     component: ExtratoComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'titular',
+    component: TitularComponent
   },
   {
     path: '**',

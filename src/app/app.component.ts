@@ -9,7 +9,7 @@ import {environment} from '../environments/environment';
 })
 export class AppComponent implements OnInit {
 
-  logado = false;
+  logado = true;
   currentRoute = '';
   elementType: 'url' | 'canvas' | 'img' = 'url';
   value: string = 'testando hackaton';
