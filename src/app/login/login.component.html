@@ -4,22 +4,26 @@
 
   <div class="card-login">
     <h2>TITULAR</h2>
-    <form [formGroup]="formLogin">
+    <form [formGroup]="formTitular" (ngSubmit)="saveTitular()">
       <label class="lbl-login" for="txbEmailTitular">E-mail:</label>
-      <input id="txbEmailTitular" type="text"/> <!-- TODO: ngMODEL -->
+      <input id="txbEmailTitular" type="text" formControlName="email"/> <!-- TODO: ngMODEL -->
       <div class="btn-holder">
         <button>ENTRAR</button> <!-- TODO: ngCLICK -->
       </div>
+      <br/>
+      <div *ngIf="titularInvalid" style="color: #ff0000">Dados inválidos</div>
     </form>
   </div>
   <div class="card-login">
     <h2>ESTABELECIMENTO</h2>
-    <form [formGroup]="formEstabelecimento">
+    <form [formGroup]="formEstabelecimento" (ngSubmit)="saveEstabelecimento()">
       <label class="lbl-login" for="txbEmailEstabelecimento">E-mail:</label>
-      <input id="txbEmailEstabelecimento" type="text"/> <!-- TODO: ngMODEL -->
+      <input id="txbEmailEstabelecimento" type="text" formControlName="email"/> <!-- TODO: ngMODEL -->
       <div class="btn-holder">
         <button>ENTRAR</button> <!-- TODO: ngCLICK -->
       </div>
+      <br/>
+      <div *ngIf="estabelecimentoInvalid" style="color: #ff0000">Dados inválidos</div>
     </form>
   </div>
 
