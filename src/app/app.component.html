@@ -7,4 +7,9 @@
 <nav>
   <a routerLink="/extrato">extrato</a>
 </nav>
-<router-outlet></router-outlet>
+
+<app-login></app-login>
+
+<div *ngIf="logado">
+  <router-outlet></router-outlet>
+</div>
