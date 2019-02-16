@@ -10,3 +10,8 @@
     bottom: 0;
     left: 0;
 }
+
+.extrato-holder {
+    position: relative;
+    left: 75%;
+}
