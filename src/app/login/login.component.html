@@ -4,7 +4,7 @@
 
   <div class="card-login">
     <h2>TITULAR</h2>
-    <form name="formLogin" class="form-login">
+    <form [formGroup]="formLogin">
       <label class="lbl-login" for="txbEmailTitular">E-mail:</label>
       <input id="txbEmailTitular" type="text" /> <!-- TODO: ngMODEL -->
       <div class="btn-holder">
@@ -14,8 +14,8 @@
   </div>
   <div class="card-login">
     <h2>ESTABELECIMENTO</h2>
-    <form name="formLogin" class="form-login">
-      <label class="lbl-login" for="txbEmail">E-mail:</label>
+    <form [formGroup]="formEstabelecimento">
+      <label class="lbl-login" for="txbEmailEstabelecimento">E-mail:</label>
       <input id="txbEmailEstabelecimento" type="text" /> <!-- TODO: ngMODEL -->
       <div class="btn-holder">
          <button>ENTRAR</button> <!-- TODO: ngCLICK -->
