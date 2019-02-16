@@ -22,14 +22,14 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-  save(){
+  save() {
     this.submitted = true;
 
     if (this.perfilForm.invalid) {
       return;
     }
 
-    console.log(this.perfilForm.value.nome)
+    console.log(this.perfilForm.value.nome);
 
     this.success = true;
   }

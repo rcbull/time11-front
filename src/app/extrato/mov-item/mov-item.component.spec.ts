@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MovItemComponent } from './mov-item.component';
+import {MovItemComponent} from './mov-item.component';
 
 describe('MovItemComponent', () => {
   let component: MovItemComponent;
@@ -8,9 +8,9 @@ describe('MovItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovItemComponent ]
+      declarations: [MovItemComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

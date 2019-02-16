@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 
-import { AgmCoreModule } from '@agm/core';
+import {AgmCoreModule} from '@agm/core';
 
 @Component({
   selector: 'app-mapa',
@@ -12,11 +12,11 @@ import { AgmCoreModule } from '@agm/core';
   styleUrls: ['./mapa.component.css']
 })
 export class MapaComponent implements OnInit {
-  texto : string = 'OnovoLab';
+  texto: string = 'OnovoLab';
   lat: number = -22.0220506;
   lng: number = -47.8971017;
   zoom: number = 15;
-  estabelecimentos = []
+  estabelecimentos = [];
 
   constructor(private http: HttpClient) {
   }
@@ -29,9 +29,9 @@ export class MapaComponent implements OnInit {
       }
     );
 
-    this.estabelecimentos.push({lat: this.lat, lng: this.lng, label: this.texto})
+    this.estabelecimentos.push({lat: this.lat, lng: this.lng, label: this.texto});
 
-    
+
   }
 
   getEstabelecimentos(): Observable<any> {
@@ -47,6 +47,6 @@ export class MapaComponent implements OnInit {
         }
       }));
   }
-  
+
 }
 

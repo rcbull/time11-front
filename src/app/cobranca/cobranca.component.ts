@@ -7,10 +7,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CobrancaComponent implements OnInit {
 
-  elementType : 'url' | 'canvas' | 'img' = 'url';
-  value : string = 'testando hackaton';
+  elementType: 'url' | 'canvas' | 'img' = 'url';
+  value: string = 'testando hackaton';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

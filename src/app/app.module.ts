@@ -9,14 +9,15 @@ import {PerfilComponent} from './perfil/perfil.component';
 import {ExtratoComponent} from './extrato/extrato.component';
 import {EstabelecimentoComponent} from './estabelecimento/estabelecimento.component';
 import {LoginComponent} from './login/login.component';
-import { TitularComponent } from './titular/titular.component';
-import { MapaComponent } from './titular/mapa/mapa.component';
-import { HeaderComponent } from './header/header.component';
-import { MovItemComponent } from './mov-item/mov-item.component';
-import { HeaderTitularComponent } from './titular/header-titular/header-titular.component';
-import { AgmCoreModule } from '@agm/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CobrancaComponent } from './cobranca/cobranca.component';
+import {TitularComponent} from './titular/titular.component';
+import {MapaComponent} from './titular/mapa/mapa.component';
+import {HeaderComponent} from './header/header.component';
+import {MovItemComponent} from './extrato/mov-item/mov-item.component';
+import {HeaderTitularComponent} from './titular/header-titular/header-titular.component';
+import {AgmCoreModule} from '@agm/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {CobrancaComponent} from './cobranca/cobranca.component';
+import { FooterTitularComponent } from './titular/footer-titular/footer-titular.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CobrancaComponent } from './cobranca/cobranca.component';
     HeaderComponent,
     MovItemComponent,
     HeaderTitularComponent,
-    CobrancaComponent
+    CobrancaComponent,
+    FooterTitularComponent
   ],
   imports: [
     BrowserModule,
