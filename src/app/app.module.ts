@@ -7,13 +7,15 @@ import {NgxQRCodeModule} from 'ngx-qrcode2';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ExtratoComponent } from './extrato/extrato.component';
 import { EstabelecimentoComponent } from './estabelecimento/estabelecimento.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerfilComponent,
     ExtratoComponent,
-    EstabelecimentoComponent
+    EstabelecimentoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
