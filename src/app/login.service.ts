@@ -15,10 +15,10 @@ export class LoginService {
     return this.http.post<any>(`${environment.api}/auth`, dados)
       .pipe(map(response => {
           if (response.status == 401 || response.status == 500 || response.status == 403) {
-          //deu ruim
+            //deu ruim
             return false;
           } else if (response.status == 200) {
-          //deu bom
+            //deu bom
           }
         })
       );

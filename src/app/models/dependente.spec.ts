@@ -1,4 +1,4 @@
-import { Dependente } from './dependente';
+import {Dependente} from './dependente';
 
 describe('Dependente', () => {
   it('should create an instance', () => {

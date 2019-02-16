@@ -1,4 +1,4 @@
-import { Mov } from './mov';
+import {Mov} from './mov';
 
 describe('Mov', () => {
   it('should create an instance', () => {
