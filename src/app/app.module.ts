@@ -11,7 +11,9 @@ import {EstabelecimentoComponent} from './estabelecimento/estabelecimento.compon
 import {LoginComponent} from './login/login.component';
 import { TitularComponent } from './titular/titular.component';
 import { MapaComponent } from './titular/mapa/mapa.component';
-import { HeaderComponent } from './titular/header/header.component';
+import { HeaderComponent } from './header/header.component';
+import { MovItemComponent } from './mov-item/mov-item.component';
+import { HeaderTitularComponent } from './titular/header-titular/header-titular.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HeaderComponent } from './titular/header/header.component';
     LoginComponent,
     TitularComponent,
     MapaComponent,
-    HeaderComponent
+    HeaderComponent,
+    MovItemComponent,
+    HeaderTitularComponent
   ],
   imports: [
     BrowserModule,
