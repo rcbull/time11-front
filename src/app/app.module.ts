@@ -23,6 +23,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DependenteModalComponent } from './titular/dependente-modal/dependente-modal.component';
 import { ExtratoEstabelecimentoComponent } from './extrato-estabelecimento/extrato-estabelecimento.component';
+import { AdicionarDependenteComponent } from './adicionar-dependente/adicionar-dependente.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ExtratoEstabelecimentoComponent } from './extrato-estabelecimento/extra
     CobrancaComponent,
     FooterTitularComponent,
     DependenteModalComponent,
-    ExtratoEstabelecimentoComponent
+    ExtratoEstabelecimentoComponent,
+    AdicionarDependenteComponent
   ],
   imports: [
     BrowserModule,

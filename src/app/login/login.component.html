@@ -6,9 +6,9 @@
     <h2>TITULAR</h2>
     <form [formGroup]="formTitular" (ngSubmit)="saveTitular()">
       <label class="lbl-login" for="txbEmailTitular">E-mail:</label>
-      <input id="txbEmailTitular" type="text" formControlName="email"/> <!-- TODO: ngMODEL -->
+      <input id="txbEmailTitular" type="text" formControlName="email"/>
       <div class="btn-holder">
-        <button>ENTRAR</button> <!-- TODO: ngCLICK -->
+        <button>ENTRAR</button>
       </div>
       <br/>
       <div *ngIf="titularInvalid" style="color: #ff0000">Dados inválidos</div>
@@ -18,13 +18,16 @@
     <h2>ESTABELECIMENTO</h2>
     <form [formGroup]="formEstabelecimento" (ngSubmit)="saveEstabelecimento()">
       <label class="lbl-login" for="txbEmailEstabelecimento">E-mail:</label>
-      <input id="txbEmailEstabelecimento" type="text" formControlName="email"/> <!-- TODO: ngMODEL -->
+      <input id="txbEmailEstabelecimento" type="text" formControlName="email"/>
       <div class="btn-holder">
-        <button>ENTRAR</button> <!-- TODO: ngCLICK -->
+        <button>ENTRAR</button>
       </div>
       <br/>
       <div *ngIf="estabelecimentoInvalid" style="color: #ff0000">Dados inválidos</div>
     </form>
+    <br/>
+    <br/>
+    <button (click)="novoEstabelecimento()">Novo</button>
   </div>
 
 </div>

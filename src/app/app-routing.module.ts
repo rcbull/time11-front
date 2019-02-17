@@ -7,6 +7,7 @@ import {ExtratoComponent} from './extrato/extrato.component';
 import {LoginComponent} from './login/login.component';
 import {TitularComponent} from './titular/titular.component';
 import {CobrancaComponent} from './cobranca/cobranca.component';
+import {ExtratoEstabelecimentoComponent} from './extrato-estabelecimento/extrato-estabelecimento.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'extrato',
     component: ExtratoComponent
+  },
+  {
+    path: 'extrato-estabelecimento',
+    component: ExtratoEstabelecimentoComponent
   },
   {
     path: 'titular',

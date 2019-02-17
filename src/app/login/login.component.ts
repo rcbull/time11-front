@@ -61,10 +61,13 @@ export class LoginComponent implements OnInit {
       this.estabelecimentoInvalid = false;
 
       this.storageService.setItem("tipo", 'estabelecimento')
-      this.router.navigate(['/estabelecimento'])
+      this.router.navigate(['/extrato-estabelecimento'])
     }
 
     this.success = true;
   }
 
+  novoEstabelecimento() {
+    this.router.navigate(['/estabelecimento'])
+  }
 }

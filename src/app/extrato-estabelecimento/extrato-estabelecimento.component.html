@@ -1,3 +1,6 @@
-<p>
-  extrato-estabelecimento works!
-</p>
+<div>
+  <app-mov-item *ngFor="let m of movimentos" [valor]="m.valor" [desc]="m.desc"></app-mov-item>
+  <div style="bottom: 10px; right: 10px; width: 90%; text-align: right; position: absolute; background-color: #ff585a">
+    <p>Total: {{ total }}</p>
+  </div>
+</div>
