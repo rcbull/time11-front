@@ -22,12 +22,12 @@ export class EstabelecimentoComponent implements OnInit {
 
   ngOnInit() {
     this.estabelecimentoForm = this.formBuilder.group({
-      nome: ['', Validators.required],
-      sobrenome: ['', Validators.required],
-      telefone: ['', Validators.required],
-      email: ['', Validators.required],
-      cnpj: ['', Validators.required],
-      categoria: ['', Validators.required],
+      nome: ['', [Validators.required, Validators.minLength(6)]],
+      sobrenome: ['', [Validators.required, Validators.minLength(6)]],
+      telefone: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email]],
+      cnpj: ['', [Validators.required, Validators.minLength(6)]],
+      categoria: ['', [Validators.required, Validators.minLength(6)]],
     });
 
     console.log(this.storageService.getItem('tipo'));
@@ -36,11 +36,11 @@ export class EstabelecimentoComponent implements OnInit {
   save() {
     this.submitted = true;
 
+    console.log(this.estabelecimentoForm.value);
+
     if (this.estabelecimentoForm.invalid) {
       return;
     }
-
-    console.log(this.estabelecimentoForm.value.nome);
 
     this.success = true;
   }

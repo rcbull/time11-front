@@ -7,11 +7,17 @@
   <label class="col-xs-3 lbl-field" for="txbNome">Nome:</label>
   <input class="col-xs-8 input-field" type="text" id="txbNome" formControlName="nome">
 
+  <label class="col-xs-3 lbl-field" for="txbSobrenome">Sobrenome:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbSobrenome" formControlName="sobrenome">
+
+  <label class="col-xs-3 lbl-field" for="txbTelefone">Telefone:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbTelefone" formControlName="telefone">
+
   <label class="col-xs-3 lbl-field" for="txbCNPJ">CNPJ:</label>
   <input class="col-xs-8 input-field" type="text" id="txbCNPJ" formControlName="cnpj">
 
   <label class="col-xs-3 lbl-field" for="ddlCategorias">Categorias:</label>
-  <select id="ddlCategorias" class="input-field col-xs-8">
+  <select id="ddlCategorias" class="input-field col-xs-8" formControlName="categoria">
     <option *ngFor="let cat of categorias" value={{cat.id}}>
       {{cat.nome}}
     </option>
