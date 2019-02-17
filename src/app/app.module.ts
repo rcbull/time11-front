@@ -25,6 +25,7 @@ import { DependenteModalComponent } from './titular/dependente-modal/dependente-
 import { ExtratoEstabelecimentoComponent } from './extrato-estabelecimento/extrato-estabelecimento.component';
 import { AdicionarDependenteComponent } from './adicionar-dependente/adicionar-dependente.component';
 import { DadosTitularComponent } from './titular/dados-titular/dados-titular.component';
+import { DependenteCardComponent } from './dependente-card/dependente-card.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,6 @@ import { DadosTitularComponent } from './titular/dados-titular/dados-titular.com
     MatDialogModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]
 })
