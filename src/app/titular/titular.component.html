@@ -11,11 +11,9 @@
     <app-extrato></app-extrato>
   </div>
 
-  <div class="bg-cover" *ngIf="qrCodeGenerated"></div>
+  <div class="bg-cover" *ngIf="sucess"></div>
 
-  <div class="modal" *ngIf="qrCodeGenerated">
-    <ngx-qrcode class="qr-code" [qrc-element-type]="elementType" [qrc-value]="value">
-    </ngx-qrcode>
+  <div class="modal" *ngIf="sucess">
     <p class="qr-code-tip" *ngIf="!qrCodeConfirmed">Aponte seu telefone para esta tela<br/> e aguarde a confirmação</p>
     <p class="qr-code-success" *ngIf="qrCodeConfirmed">Sucesso!</p>
   </div>

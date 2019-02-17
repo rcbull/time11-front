@@ -12,6 +12,7 @@ export class TitularComponent implements OnInit {
   email: string;
   mostrarDetalhes = false;
   titularDados: any;
+  sucess = false
 
   constructor(private titularService: TitularService,
               private storageService: StorageService) {
@@ -26,5 +27,11 @@ export class TitularComponent implements OnInit {
         console.log(response);
         this.titularDados = response;
       });
+  }
+
+  fecharNotificacao() {
+    setTimeout(() => {
+      this.sucess = false;
+    }, 3000);
   }
 }

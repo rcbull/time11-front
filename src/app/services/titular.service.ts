@@ -12,7 +12,7 @@ export class TitularService {
   }
 
   consultarTitular(email: string) {
-    return this.http.get<any>(`${environment.api}/time11/titulares/email/${email}`)
+    return this.http.get<any>(`${environment.api}/titulares/email/${email}`)
       .pipe(map(response => {
           console.log(response);
           return false;

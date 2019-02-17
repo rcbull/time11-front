@@ -26,12 +26,11 @@ export class MapaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getEstabelecimentos().subscribe(
-      response => {
-
-        console.log(response);
-      }
-    );
+    // this.getEstabelecimentos().subscribe(
+    //   response => {
+    //     console.log(response);
+    //   }
+    // );
 
     this.estabelecimentos.push({lat: this.lat, lng: this.lng, label: this.texto});
 
@@ -39,19 +38,6 @@ export class MapaComponent implements OnInit {
       this.storageService.setItem("position", JSON.stringify(pos));
       console.log(pos);
     })
-  }
-
-  getEstabelecimentos(): Observable<any> {
-    return this.http.get<any>(`${environment.api}/estabelecimentos`)
-      .pipe(map(response => {
-        if (response.status == 400) {
-
-        } else if (response.status == 200) {
-          this.estabelecimentos = response.estabelecimentos;
-          console.log(response);
-          return this.estabelecimentos;
-        }
-      }));
   }
 
 }

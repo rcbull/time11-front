@@ -70,6 +70,5 @@ export class EstabelecimentoComponent implements OnInit {
     setTimeout(() => {
       this.success = false;
     }, 3000);
-
   }
 }
