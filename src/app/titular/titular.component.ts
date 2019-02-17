@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TitularService} from '../services/titular.service';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-titular',
@@ -8,19 +9,22 @@ import {TitularService} from '../services/titular.service';
 })
 export class TitularComponent implements OnInit {
 
+  email: string;
   mostrarDetalhes = false;
+  titularDados: any;
 
-  constructor(private titularService: TitularService) {
+  constructor(private titularService: TitularService,
+              private storageService: StorageService) {
   }
 
   ngOnInit() {
 
     this.mostrarDetalhes = true;
 
-    this.titularService.consultarTitular("thianolima@hotmail.com")
-      .subscribe(response => console.log(response));
-
-
+    this.titularService.consultarTitular(this.storageService.getItem('email'))
+      .subscribe(response => {
+        console.log(response);
+        this.titularDados = response;
+      });
   }
-
 }

@@ -35,15 +35,14 @@ export class LoginComponent implements OnInit {
   saveTitular() {
     this.submitted = true;
 
-    console.log(this.formTitular.value.email);
-
     if (this.formTitular.invalid) {
       this.titularInvalid = true;
     } else {
       this.titularInvalid = false;
 
-      this.storageService.setItem("tipo", 'titular')
-      this.router.navigate(['/titular'])
+      this.storageService.setItem("tipo", 'titular');
+      this.storageService.setItem("email", this.formTitular.value.email);
+      this.router.navigate(['/titular']);
     }
 
     this.success = true;
@@ -52,16 +51,14 @@ export class LoginComponent implements OnInit {
   saveEstabelecimento() {
     this.submitted = true;
 
-    console.log(this.formEstabelecimento.value.email);
-
-    console.log(this.formEstabelecimento.invalid)
     if (this.formEstabelecimento.invalid) {
       this.estabelecimentoInvalid = true;
     } else {
       this.estabelecimentoInvalid = false;
 
-      this.storageService.setItem("tipo", 'estabelecimento')
-      this.router.navigate(['/extrato-estabelecimento'])
+      this.storageService.setItem("tipo", 'estabelecimento');
+      this.storageService.setItem("email", this.formEstabelecimento.value.email);
+      this.router.navigate(['/extrato-estabelecimento']);
     }
 
     this.success = true;
