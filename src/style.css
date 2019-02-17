@@ -24,6 +24,8 @@ body {
   text-align: center;
   line-height: 74px;
   user-select: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .full-height {

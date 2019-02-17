@@ -12,3 +12,8 @@
 .lbl-login {
   padding: 0 10px 0 0;
 }
+
+.card-login {
+  min-width: 300px;  
+
+}
