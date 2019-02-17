@@ -20,7 +20,7 @@
         </select>
         <select class="white-hover" *ngIf="listadependentes" formControlName="dependente" ngmodel="dependente">
           <option>Selecione: DEPENDENTE</option>
-          <option *ngFor="let dep of listadependentes">{{ dep.nome }}</option>
+          <option *ngFor="let dep of listadependentes" value="{{dep.id}}">{{ dep.nome }}</option>
         </select>
       </div>
       <button class="btn-filtrar white-hover" mat-raised-button (click)="pesquisar()">Filtrar</button>

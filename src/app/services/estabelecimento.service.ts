@@ -33,11 +33,19 @@ export class EstabelecimentoService {
       );
   }
 
-  getMovimentacoes(): Observable<any> {
-    return this.http.get<any>(`${environment.api}/movimentacoes`)
+  getMovimentacoes(data: any): Observable<any> {
+    if(data){
+    return this.http.get<any>(`${environment.api}/movimentacoes?inicio=${data.dataInicial}&fim=${data.dataFinal}&categoria=${data.categoria}&idDependente=${data.dependente}`)
       .pipe(map(response => {
           return response;
         })
       );
+  }else{
+      return this.http.get<any>(`${environment.api}/movimentacoes`)
+        .pipe(map(response => {
+            return response;
+          })
+        );
+    }
   }
 }

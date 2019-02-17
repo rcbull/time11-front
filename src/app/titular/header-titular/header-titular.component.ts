@@ -16,9 +16,9 @@ export class HeaderTitularComponent implements OnInit {
   categoria: any
   dataInicial = moment().add('days', -30).format('YYYY-MM-DD');
   dataFinal = moment().format('YYYY-MM-DD');
-  categorias = [{'nome': 'Entretendimento', 'id': 1},
-    {'nome': 'Transporte', 'id': 2},
-    {'nome': 'Alimentação', 'id': 3}];
+  categorias = [{'nome': 'ENTRETENDIMENTO', 'id': 1},
+    {'nome': 'TRANSPORTE', 'id': 2},
+    {'nome': 'ALIMENTACAO', 'id': 3}];
   @Output() filtroChange: EventEmitter<any> = new EventEmitter<any>()
 
   constructor(private formBuilder: FormBuilder) {

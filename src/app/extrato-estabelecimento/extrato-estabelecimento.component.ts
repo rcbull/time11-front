@@ -17,7 +17,7 @@ export class ExtratoEstabelecimentoComponent implements OnInit {
 
   ngOnInit() {
 
-    this.estabelecimentoService.getMovimentacoes().subscribe(response => {
+    this.estabelecimentoService.getMovimentacoes(null).subscribe(response => {
         this.movimentos = response;
 
         this.total = this.movimentos.reduce(
