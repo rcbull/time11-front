@@ -22,6 +22,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DependenteModalComponent } from './titular/dependente-modal/dependente-modal.component';
+import { ExtratoEstabelecimentoComponent } from './extrato-estabelecimento/extrato-estabelecimento.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DependenteModalComponent } from './titular/dependente-modal/dependente-
     HeaderTitularComponent,
     CobrancaComponent,
     FooterTitularComponent,
-    DependenteModalComponent
+    DependenteModalComponent,
+    ExtratoEstabelecimentoComponent
   ],
   imports: [
     BrowserModule,
