@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {StorageService} from '../services/storage.service';
 import {EstabelecimentoService} from '../services/estabelecimento.service';
 import {GeolocationService} from '../services/geolocation.service';
+import bugsnagClient from '../BugsnagCliente';
 
 @Component({
   selector: 'app-estabelecimento',
@@ -59,6 +60,7 @@ export class EstabelecimentoComponent implements OnInit {
           error => {
             console.log(error);
             this.mensagem = 'Erro ao cadastrar estabelecimento';
+            bugsnagClient.notify(new Error('Test error'));
           });
         this.fecharNotificacao();
       });

@@ -1,6 +1,6 @@
 <app-header></app-header>
 <form [formGroup]="dadosTitularForm" class="row card card-dados-titular" (ngSubmit)="save()">
-  
+
   <h1 class="col-xs-12">MEUS DADOS</h1>
 
   <label class="col-xs-3 lbl-field" for="txbNome">Nome:</label>
@@ -19,7 +19,7 @@
   <input class="col-xs-8 input-field" type="text" id="txbCPF" formControlName="cpf">
 
   <label class="col-xs-3 lbl-field" for="txbCPF">Dependentes:</label>
-  <div class="dependente-holder col-xs-8 input-field" *ngIf="titularDados" >
+  <div class="dependente-holder col-xs-8 input-field" *ngIf="titularDados">
     <div class="dependente-item" *ngFor="let dependente of titularDados.dependentes">
       <p>{{ dependente.nome }} {{ dependente.sobrenome }}</p>
       <div class="dependente-close">&times;</div>
@@ -27,8 +27,8 @@
   </div>
 
   <div class="btn-holder">
-      <a routerLink="/titular" class="btn">Voltar</a>
-      <input type="submit" class="btn fix-height" value="Salvar">
+    <a routerLink="/titular" class="btn">Voltar</a>
+    <input type="submit" class="btn fix-height" value="Salvar">
   </div>
   <div *ngIf="dadosTitularInvalid" style="color: #ff0000">Dados inválidos</div>
 </form>

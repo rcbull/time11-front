@@ -10,7 +10,8 @@ export class DependenteModalComponent implements OnInit {
   animal: string;
   name: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

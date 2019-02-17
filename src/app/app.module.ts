@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {LOCALE_ID, NgModule} from '@angular/core';
+import {NgModule, ErrorHandler} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -26,6 +26,14 @@ import {DependenteModalComponent} from './titular/dependente-modal/dependente-mo
 import {ExtratoEstabelecimentoComponent} from './extrato-estabelecimento/extrato-estabelecimento.component';
 import {AdicionarDependenteComponent} from './adicionar-dependente/adicionar-dependente.component';
 import {DadosTitularComponent} from './titular/dados-titular/dados-titular.component';
+import bugsnag from '@bugsnag/js';
+import {BugsnagErrorHandler} from '@bugsnag/plugin-angular';
+
+const bugsnagClient = bugsnag('014e002718adf7c5837ba5af37facb23');
+
+export function errorHandlerFactory() {
+  return new BugsnagErrorHandler(bugsnagClient);
+}
 
 @NgModule({
   declarations: [
@@ -61,7 +69,7 @@ import {DadosTitularComponent} from './titular/dados-titular/dados-titular.compo
     MatCheckboxModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [{provide: ErrorHandler, useFactory: errorHandlerFactory}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

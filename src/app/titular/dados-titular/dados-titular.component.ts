@@ -2,6 +2,7 @@ import {Component, Inject, OnInit, Optional} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {TitularService} from '../../services/titular.service';
 import {StorageService} from '../../services/storage.service';
+import bugsnagClient from '../../BugsnagCliente';
 
 @Component({
   selector: 'app-dados-titular',
@@ -35,19 +36,20 @@ export class DadosTitularComponent implements OnInit {
 
     this.titularService.consultarTitular(this.storageService.getItem('email'))
       .subscribe(response => {
-        if (response) {
+          if (response) {
 
-          this.titularDados = response;
+            this.titularDados = response;
 
-          this.dadosTitularForm.patchValue({
-            nome: this.titularDados.nome,
-            sobrenome: this.titularDados.sobrenome,
-            telefone: this.titularDados.telefone,
-            email: this.titularDados.email,
-            cpf: this.titularDados.cpf
-          }, {emitEvent: false});
-        }
-      });
+            this.dadosTitularForm.patchValue({
+              nome: this.titularDados.nome,
+              sobrenome: this.titularDados.sobrenome,
+              telefone: this.titularDados.telefone,
+              email: this.titularDados.email,
+              cpf: this.titularDados.cpf
+            }, {emitEvent: false});
+          }
+        },
+        error => bugsnagClient.notify(new Error('Test error')));
   }
 
   save() {

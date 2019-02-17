@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from "@angular/router"
+import {Router} from '@angular/router';
 import {StorageService} from '../services/storage.service';
 
 @Component({
@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
     } else {
       this.titularInvalid = false;
 
-      this.storageService.setItem("tipo", 'titular');
-      this.storageService.setItem("email", this.formTitular.value.email);
+      this.storageService.setItem('tipo', 'titular');
+      this.storageService.setItem('email', this.formTitular.value.email);
       this.router.navigate(['/titular']);
     }
 
@@ -56,8 +56,8 @@ export class LoginComponent implements OnInit {
     } else {
       this.estabelecimentoInvalid = false;
 
-      this.storageService.setItem("tipo", 'estabelecimento');
-      this.storageService.setItem("email", this.formEstabelecimento.value.email);
+      this.storageService.setItem('tipo', 'estabelecimento');
+      this.storageService.setItem('email', this.formEstabelecimento.value.email);
       this.router.navigate(['/extrato-estabelecimento']);
     }
 
@@ -65,6 +65,6 @@ export class LoginComponent implements OnInit {
   }
 
   novoEstabelecimento() {
-    this.router.navigate(['/estabelecimento'])
+    this.router.navigate(['/estabelecimento']);
   }
 }

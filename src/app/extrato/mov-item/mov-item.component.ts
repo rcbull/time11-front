@@ -7,8 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MovItemComponent implements OnInit {
 
-  @Input() desc: string
-  @Input() valor: string
+  @Input() desc: string;
+  @Input() valor: string;
 
   constructor() {
   }

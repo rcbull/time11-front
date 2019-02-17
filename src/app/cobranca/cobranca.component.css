@@ -1,36 +1,36 @@
 
 .lbl-login {
-    padding: 0 10px 0 0;
-    text-align: right;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 40px;
+  padding: 0 10px 0 0;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
 }
 
 .qr-code-holder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    height: 100%;
-    position: absolute;
-    transform: scale(2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100%;
+  position: absolute;
+  transform: scale(2);
 }
 
 .qr-code-tip {
-    font-size: 12px;
-    width: 200px;
-    height: 20px;
-    margin: 0 20px 20px;
-    text-align: center;
+  font-size: 12px;
+  width: 200px;
+  height: 20px;
+  margin: 0 20px 20px;
+  text-align: center;
 }
 
 .qr-code-success {
-    font-size: 16px;
-    color: #009900;
-    width: 200px;
-    height: 20px;
-    margin: 0 20px 20px;
-    text-align: center;
+  font-size: 16px;
+  color: #009900;
+  width: 200px;
+  height: 20px;
+  margin: 0 20px 20px;
+  text-align: center;
 }

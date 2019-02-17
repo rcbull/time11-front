@@ -1,6 +1,6 @@
 <app-header></app-header>
 <form [formGroup]="estabelecimentoForm" class="row card card-estabelecimento" (ngSubmit)="save()">
-  
+
   <h1 class="col-xs-12">ESTABELECIMENTO</h1>
 
   <label class="col-xs-3 lbl-field" for="txbNome">Nome:</label>
@@ -25,8 +25,8 @@
     </option>
   </select>
   <div class="btn-holder">
-      <a routerLink="/login" class="btn">Voltar</a>
-      <input type="submit" class="btn fix-height" value="Salvar"> <!-- TODO: SUBMIT -->
+    <a routerLink="/login" class="btn">Voltar</a>
+    <input type="submit" class="btn fix-height" value="Salvar"> <!-- TODO: SUBMIT -->
   </div>
   <div *ngIf="estabelecimentoInvalid" style="color: #ff0000">Dados inválidos</div>
 </form>

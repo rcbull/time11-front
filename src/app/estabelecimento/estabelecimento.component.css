@@ -1,19 +1,19 @@
 .card-estabelecimento {
-    min-height: 150px;
-    width: 38%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-    background: #ffffff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 25px;
-    margin: 50px auto;
+  min-height: 150px;
+  width: 38%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 25px;
+  margin: 50px auto;
 }
 
 .card-estabelecimento {
-    width: 38%;
+  width: 38%;
 }
 
 .fix-height {
-    height: 30px;
+  height: 30px;
 }

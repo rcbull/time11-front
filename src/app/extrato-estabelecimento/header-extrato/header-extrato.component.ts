@@ -9,8 +9,8 @@ import * as moment from 'moment';
 })
 export class HeaderExtratoComponent implements OnInit {
 
-  dataInicial = moment().add('days', -30).format("YYYY-MM-DD");
-  dataFinal = moment().format("YYYY-MM-DD");
+  dataInicial = moment().add('days', -30).format('YYYY-MM-DD');
+  dataFinal = moment().format('YYYY-MM-DD');
 
   constructor() {
   }

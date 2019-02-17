@@ -12,14 +12,14 @@ import {CobrancaService} from '../services/cobranca.service';
 export class CobrancaComponent implements OnInit {
 
   elementType: 'url' | 'canvas' | 'img' = 'url';
-  value = "VALOR"
+  value = 'VALOR';
   qrCodeGenerated = false;
   qrCodeConfirmed = false;
   mensagem: string;
   formCobranca: FormGroup;
   submitted = false;
   success = false;
-  stopCondition = false
+  stopCondition = false;
 
   constructor(private formBuilder: FormBuilder,
               public cobrancaService: CobrancaService) {
@@ -31,7 +31,7 @@ export class CobrancaComponent implements OnInit {
     );
   }
 
-  saveCobranca(){
+  saveCobranca() {
     console.log(this.formCobranca.value.valor);
 
     this.qrCodeGenerated = true;
@@ -40,15 +40,15 @@ export class CobrancaComponent implements OnInit {
     this.updateCobranca();
   }
 
-  updateCobranca(){ 
+  updateCobranca() {
     setTimeout(() => {
-      this.qrCodeConfirmed = true; 
+      this.qrCodeConfirmed = true;
     }, 2000);
-    
+
     setTimeout(() => {
-      this.reset()
+      this.reset();
     }, 3500); // RESETA FORMULÁRIO DEPOIS DE 1,5 SEGUNDO DA CONFIRMAÇÃO
-    
+
   }
 
   reset() {

@@ -9,18 +9,18 @@
   </div>
   <div class="col-xs-3 extrato-filter-holder">
     <div class="filter-holder">
-        <div class="filter-title">
-          FILTROS:
-        </div>
-        <select class="white-hover">
-          <option>Selecione: CATEGORIA</option>
-          <option *ngFor="let cat of categorias" value="cat.id">{{ cat.nome }}</option>
-        </select>
-    
-        <select class="white-hover" *ngIf="listadependentes">
-          <option>Selecione: DEPENDENTE</option>
-          <option *ngFor="let dep of listadependentes" value="dep.nome">{{ dep.nome }}</option>
-        </select>
+      <div class="filter-title">
+        FILTROS:
+      </div>
+      <select class="white-hover">
+        <option>Selecione: CATEGORIA</option>
+        <option *ngFor="let cat of categorias" value="cat.id">{{ cat.nome }}</option>
+      </select>
+
+      <select class="white-hover" *ngIf="listadependentes">
+        <option>Selecione: DEPENDENTE</option>
+        <option *ngFor="let dep of listadependentes" value="dep.nome">{{ dep.nome }}</option>
+      </select>
     </div>
     <button class="btn-filtrar white-hover" mat-raised-button (click)="openDialog()">Filtrar</button>
   </div>

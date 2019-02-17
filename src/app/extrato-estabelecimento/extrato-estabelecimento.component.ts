@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-extrato-estabelecimento',
@@ -26,14 +26,15 @@ export class ExtratoEstabelecimentoComponent implements OnInit {
       'valor': 100.00
     }];
 
-  total: number
+  total: number;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
 
     this.total = this.movimentos.reduce(
-      function(sum, current){
+      function (sum, current) {
         return sum + current.valor;
       }, 0
     );

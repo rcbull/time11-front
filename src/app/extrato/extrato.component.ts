@@ -28,7 +28,7 @@ export class ExtratoComponent implements OnInit {
       'valor': 100.00
     }];
 
-  total: number
+  total: number;
 
   constructor() {
   }
@@ -36,7 +36,7 @@ export class ExtratoComponent implements OnInit {
   ngOnInit() {
 
     this.total = this.movimentos.reduce(
-      function(sum, current){
+      function (sum, current) {
         return sum + current.valor;
       }, 0
     );

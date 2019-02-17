@@ -1,19 +1,19 @@
 .mapa-holder {
-    position: relative;
-    min-height: calc(100vh - 100px);
+  position: relative;
+  min-height: calc(100vh - 100px);
 }
 
 .map-full-height {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .extrato-holder {
-    position: fixed;
-    right: 0;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.85);
+  position: fixed;
+  right: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
 }

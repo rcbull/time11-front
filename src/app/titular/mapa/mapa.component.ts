@@ -35,9 +35,9 @@ export class MapaComponent implements OnInit {
     this.estabelecimentos.push({lat: this.lat, lng: this.lng, label: this.texto});
 
     this.geolocationService.getGeolocation().then(pos => {
-      this.storageService.setItem("position", JSON.stringify(pos));
+      this.storageService.setItem('position', JSON.stringify(pos));
       console.log(pos);
-    })
+    });
   }
 
 }
