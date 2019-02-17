@@ -48,6 +48,8 @@ input[type="date"]::-webkit-inner-spin-button {
   padding: 20px;
   text-align: center;
   border-radius: 25px;
+  margin: 50px auto;
+  min-width: 500px;
 }
 
 .input-field {
@@ -124,4 +126,12 @@ input[type="date"]::-webkit-inner-spin-button {
   z-index: 50;
   
   background: rgba(0, 0, 0, 0.6);
+}
+
+.lbl-field {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
 }

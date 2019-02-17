@@ -41,7 +41,7 @@ const routes: Routes = [
     component: TitularComponent
   },
   {
-    path: 'dados-titular',
+    path: 'meus-dados',
     component: DadosTitularComponent
   },
   {
