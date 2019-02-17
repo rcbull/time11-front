@@ -100,3 +100,19 @@ select option {
   color: #ffffff;
   border-radius: 14px;
 }
+
+.btn-nova-cobranca {
+  width: 220px;
+}
+
+.btn-white {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.extrato-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

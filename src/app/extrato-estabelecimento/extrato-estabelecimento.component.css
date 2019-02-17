@@ -1,5 +1,7 @@
 .extrato-container {
-
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: calc(100vh - 150px);
 }
 
 .extrato-title {
