@@ -9,6 +9,7 @@ export class MovItemComponent implements OnInit {
 
   @Input() desc: string;
   @Input() valor: string;
+  @Input() dependente: string;
 
   constructor() {
   }
