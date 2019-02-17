@@ -22,7 +22,7 @@ export class CobrancaComponent implements OnInit {
   success = false;
   stopCondition = false;
   descricao = 'Paçocas';
-  valor = 1000;
+  valor = '10,00';
 
   constructor(private formBuilder: FormBuilder,
               public cobrancaService: CobrancaService) {
@@ -42,12 +42,14 @@ export class CobrancaComponent implements OnInit {
     let idbuyer = '983dd438a7b14a67871bad02e745ba68';
     let iddependente = 'd823abc92bea4816a5f4787a068ae4d0';
 
+    this.valor = this.formCobranca.value.valor;
+
     // this.cobrancaService.enviarCobranca({}).subscribe(response => {
     //
     // });
 
     this.qrCodeGenerated = true;
-    this.value = `${environment.api}/movimentacoes/tokenTitular/${idbuyer}/tokenDependente/${iddependente}/valor/${this.formCobranca.value.valor * 100}/descricao/combo3`;
+    this.value = `${environment.api}/movimentacoes/tokenTitular/${idbuyer}/tokenDependente/${iddependente}/valor/${this.valor.replace(".", "").replace(",", "")}/descricao/combo3`;
 
     this.updateCobranca();
   }
