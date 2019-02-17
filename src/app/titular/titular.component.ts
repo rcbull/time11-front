@@ -17,6 +17,7 @@ export class TitularComponent implements OnInit {
   sucess = false;
   dependentes: any;
   movimentos: any;
+  total: number;
 
   constructor(private titularService: TitularService,
               private estabelecimentoService: EstabelecimentoService,
@@ -37,6 +38,12 @@ export class TitularComponent implements OnInit {
 
     this.estabelecimentoService.getMovimentacoes().subscribe(response => {
         this.movimentos = response;
+
+        this.total = this.movimentos.reduce(
+          function (sum, current) {
+            return sum + current.valor;
+          }, 0
+        );
       },
       error => bugsnagClient.notify(new Error('Test error')));
   }

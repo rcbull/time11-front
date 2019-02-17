@@ -9,19 +9,12 @@ export class ExtratoComponent implements OnInit {
 
   @Input() pageTitular: boolean;
   @Input() movimentacoes = [];
-  total: number;
+  @Input() total: number;
 
   constructor() {
   }
 
   ngOnInit() {
-    if (this.movimentacoes) {
-      this.total = this.movimentacoes.reduce(
-        function (sum, current) {
-          return sum + current.valor;
-        }, 0
-      );
-    }
   }
 
 }
