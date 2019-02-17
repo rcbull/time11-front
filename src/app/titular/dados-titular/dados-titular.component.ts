@@ -56,7 +56,7 @@ export class DadosTitularComponent implements OnInit {
     this.submitted = true;
 
     console.log(this.dadosTitularForm.value);
-
+    
     if (this.dadosTitularForm.invalid) {
       this.dadosTitularInvalid = true;
       return;

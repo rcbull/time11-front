@@ -13,19 +13,24 @@ body {
 }
 
 .logo {
-  background: hsla(326, 79%, 32%, 1);
-  width: 80px;
+  background: hsl(0, 0%, 100%);
+  width: 140px;
+  display: flex;
+  align-items: center;
   height: 80px;
+  padding: 0 8px;
   margin: 10px 20px;
-  border-radius: 50px;
+  border-radius: 20px;
   color: #f1f1f1;
-  font-family: GilroyRegular;
-  font-size: 47px;
   text-align: center;
   line-height: 74px;
   user-select: none;
   cursor: pointer;
   text-decoration: none;
+}
+
+.logo img {
+  width: 100%;
 }
 
 .full-height {

@@ -7,6 +7,7 @@ import {environment} from '../../../environments/environment';
 import {AgmCoreModule} from '@agm/core';
 import {GeolocationService} from '../../services/geolocation.service';
 import {StorageService} from '../../services/storage.service';
+import {EstabelecimentoService} from '../../services/estabelecimento.service';
 
 @Component({
   selector: 'app-mapa',
@@ -22,10 +23,19 @@ export class MapaComponent implements OnInit {
 
   constructor(private http: HttpClient,
               private geolocationService: GeolocationService,
-              private storageService: StorageService) {
+              private storageService: StorageService, 
+              private estabelecimentoService: EstabelecimentoService) {
   }
 
   ngOnInit() {
+    
+    this.estabelecimentoService.getEstabelecimentos().subscribe(result => {
+      console.log(result);
+    },
+    error => {
+      console.log(error);
+    });
+
     this.estabelecimentos.push({lat: this.lat, lng: this.lng, label: this.texto},
       {lat: -22.0223506, lng: -47.8941017, label: 'Café Novolab'});
 
