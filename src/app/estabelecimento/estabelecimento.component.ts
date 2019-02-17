@@ -52,12 +52,14 @@ export class EstabelecimentoComponent implements OnInit {
         this.estabelecimentoInvalid = false;
         this.storageService.setItem('position', JSON.stringify(pos));
         let dados = this.estabelecimentoForm.value;
-        this.estabelecimentoService.salvar(dados).subscribe(result => console.log(result));
-
-        this.mensagem = 'SAFASAFASFSAFSAFSAFSAF';
-
-        this.estabelecimentoForm.reset({});
-
+        this.estabelecimentoService.salvar(dados).subscribe(result => {
+            this.estabelecimentoForm.reset({});
+            this.mensagem = 'Sucesso no cadastro do estabelecimento';
+          },
+          error => {
+            console.log(error);
+            this.mensagem = 'Erro ao cadastrar estabelecimento';
+          });
         this.fecharNotificacao();
       });
     }
