@@ -30,3 +30,11 @@
   </div>
   <div *ngIf="estabelecimentoInvalid" style="color: #ff0000">Dados inválidos</div>
 </form>
+
+<div class="bg-cover" *ngIf="success"></div>
+
+<div class="modal" *ngIf="success">
+  <p class="qr-code-tip" *ngIf="!qrCodeConfirmed">{{ mensagem }}</p>
+  <p class="qr-code-success" *ngIf="qrCodeConfirmed">Sucesso!</p>
+</div>
+

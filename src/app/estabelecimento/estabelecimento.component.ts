@@ -12,9 +12,10 @@ import {GeolocationService} from '../services/geolocation.service';
 export class EstabelecimentoComponent implements OnInit {
 
   estabelecimentoForm: FormGroup;
-  estabelecimentoInvalid = false
+  estabelecimentoInvalid = false;
   submitted = false;
   success = false;
+  mensagem: string;
   categorias = [{'nome': 'Entretendimento', 'id': 1},
     {'nome': 'Transporte', 'id': 2},
     {'nome': 'Alimentação', 'id': 3}];
@@ -44,20 +45,29 @@ export class EstabelecimentoComponent implements OnInit {
     console.log(this.estabelecimentoForm.value);
 
     if (this.estabelecimentoForm.invalid) {
-      this.estabelecimentoInvalid = true
+      this.estabelecimentoInvalid = true;
       return;
     } else {
       this.geolocationService.getGeolocation().then(pos => {
-        this.estabelecimentoInvalid = false
-        this.storageService.setItem("position", JSON.stringify(pos));
+        this.estabelecimentoInvalid = false;
+        this.storageService.setItem('position', JSON.stringify(pos));
         let dados = this.estabelecimentoForm.value;
         this.estabelecimentoService.salvar(dados).subscribe(result => console.log(result));
-      })
 
+        this.mensagem = 'SAFASAFASFSAFSAFSAFSAF';
 
+        this.estabelecimentoForm.reset({});
+
+        this.fecharNotificacao();
+      });
     }
-
     this.success = true;
   }
 
+  fecharNotificacao() {
+    setTimeout(() => {
+      this.success = false;
+    }, 3000);
+
+  }
 }
