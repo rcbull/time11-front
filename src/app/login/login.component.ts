@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from "@angular/router"
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,9 @@ export class LoginComponent implements OnInit {
   estabelecimentoInvalid = false;
   titularInvalid = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private storageService: StorageService) {
   }
 
   ngOnInit() {
@@ -37,6 +41,9 @@ export class LoginComponent implements OnInit {
       this.titularInvalid = true;
     } else {
       this.titularInvalid = false;
+
+      this.storageService.setItem("tipo", 'titular')
+      this.router.navigate(['/titular'])
     }
 
     this.success = true;
@@ -52,6 +59,9 @@ export class LoginComponent implements OnInit {
       this.estabelecimentoInvalid = true;
     } else {
       this.estabelecimentoInvalid = false;
+
+      this.storageService.setItem("tipo", 'estabelecimento')
+      this.router.navigate(['/estabelecimento'])
     }
 
     this.success = true;

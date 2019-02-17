@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-estabelecimento',
@@ -15,7 +16,8 @@ export class EstabelecimentoComponent implements OnInit {
     {'nome': 'Cinema', 'id': 2},
     {'nome': 'Cantina', 'id': 3}];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private storageService: StorageService) {
   }
 
   ngOnInit() {
@@ -26,8 +28,9 @@ export class EstabelecimentoComponent implements OnInit {
       email: ['', Validators.required],
       cnpj: ['', Validators.required],
       categoria: ['', Validators.required],
-
     });
+
+    console.log(this.storageService.getItem('tipo'));
   }
 
   save() {
