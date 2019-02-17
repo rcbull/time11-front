@@ -12,14 +12,9 @@ export class CobrancaService {
   }
 
   enviarCobranca(dados: any) {
-    return this.http.post<any>(`${environment.api}/auth`, dados)
+    return this.http.get<any>(`${environment.api}/movimentacoes/tokenTitular/${dados.titular}/tokenDependente/${dados.dependente}/valor/${dados.valor}/descricao/combo3`, dados)
       .pipe(map(response => {
-          if (response.status == 401 || response.status == 500 || response.status == 403) {
-            //deu ruim
-            return false;
-          } else if (response.status == 200) {
-            //deu bom
-          }
+         return response;
         })
       );
   }

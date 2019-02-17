@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {interval, Observable, timer} from 'rxjs';
 import {takeWhile, filter, take, flatMap} from 'rxjs/operators';
 import {CobrancaService} from '../services/cobranca.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-cobranca',
@@ -21,7 +22,7 @@ export class CobrancaComponent implements OnInit {
   success = false;
   stopCondition = false;
   descricao = 'Paçocas';
-  valor = '10.00';
+  valor = 1000;
 
   constructor(private formBuilder: FormBuilder,
               public cobrancaService: CobrancaService) {
@@ -37,10 +38,16 @@ export class CobrancaComponent implements OnInit {
   }
 
   saveCobranca() {
-    console.log(this.formCobranca.value.valor);
+    // consultar valores da api para o pai idzoop e cliança
+    let idbuyer = '983dd438a7b14a67871bad02e745ba68';
+    let iddependente = 'd823abc92bea4816a5f4787a068ae4d0';
+
+    // this.cobrancaService.enviarCobranca({}).subscribe(response => {
+    //
+    // });
 
     this.qrCodeGenerated = true;
-    value: this.formCobranca.value.valor;
+    this.value = `${environment.api}/movimentacoes/tokenTitular/${idbuyer}/tokenDependente/${iddependente}/valor/${this.formCobranca.value.valor * 100}/descricao/combo3`;
 
     this.updateCobranca();
   }
@@ -48,11 +55,11 @@ export class CobrancaComponent implements OnInit {
   updateCobranca() {
     setTimeout(() => {
       this.qrCodeConfirmed = true;
-    }, 2000);
+    }, 25000);
 
     setTimeout(() => {
       this.reset();
-    }, 3500); // RESETA FORMULÁRIO DEPOIS DE 1,5 SEGUNDO DA CONFIRMAÇÃO
+    }, 30000);
 
   }
 

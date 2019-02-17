@@ -24,6 +24,7 @@
   <div class="modal" *ngIf="qrCodeGenerated">
     <ngx-qrcode class="qr-code" [qrc-element-type]="elementType" [qrc-value]="value">
     </ngx-qrcode>
+    R$ {{ valor }}
     <p class="qr-code-tip" *ngIf="!qrCodeConfirmed">Aponte seu telefone para esta tela<br/> e aguarde a confirmação</p>
     <p class="qr-code-success" *ngIf="qrCodeConfirmed">Sucesso!</p>
   </div>
