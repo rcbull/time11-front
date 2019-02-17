@@ -2,7 +2,6 @@
 <form [formGroup]="estabelecimentoForm" class="row card-estabelecimento" (ngSubmit)="save()">
   
   <h1 class="col-xs-12">ESTABELECIMENTO</h1>
-  <h5 *ngIf="success">Your form is valid!</h5>
 
   <label class="col-xs-3 lbl-field" for="txbNome">Nome:</label>
   <input class="col-xs-8 input-field" type="text" id="txbNome" formControlName="nome">
@@ -12,6 +11,9 @@
 
   <label class="col-xs-3 lbl-field" for="txbTelefone">Telefone:</label>
   <input class="col-xs-8 input-field" type="text" id="txbTelefone" formControlName="telefone">
+
+  <label class="col-xs-3 lbl-field" for="txbEmail">Email:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbEmail" formControlName="email">
 
   <label class="col-xs-3 lbl-field" for="txbCNPJ">CNPJ:</label>
   <input class="col-xs-8 input-field" type="text" id="txbCNPJ" formControlName="cnpj">
@@ -26,4 +28,5 @@
       <a routerLink="/login" class="btn">Voltar</a>
       <input type="submit" class="btn fix-height" value="Salvar"> <!-- TODO: SUBMIT -->
   </div>
+  <div *ngIf="estabelecimentoInvalid" style="color: #ff0000">Dados inválidos</div>
 </form>

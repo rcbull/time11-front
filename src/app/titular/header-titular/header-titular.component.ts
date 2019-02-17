@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material'
 import {DependenteModalComponent} from '../dependente-modal/dependente-modal.component';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-header-titular',
   templateUrl: './header-titular.component.html',
@@ -9,12 +11,14 @@ import {DependenteModalComponent} from '../dependente-modal/dependente-modal.com
 })
 export class HeaderTitularComponent implements OnInit {
 
+  dataInicial = moment().add('days', -30).format("YYYY-MM-DD");
+  dataFinal = moment().format("YYYY-MM-DD");
+
   constructor(public dialog: MatDialog) {
   }
 
   ngOnInit() {
   }
-
 
   openDialog(): void {
     const self = this

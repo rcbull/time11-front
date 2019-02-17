@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {StorageService} from '../services/storage.service';
 import {EstabelecimentoService} from '../services/estabelecimento.service';
+import {GeolocationService} from '../services/geolocation.service';
 
 @Component({
   selector: 'app-estabelecimento',
@@ -11,6 +12,7 @@ import {EstabelecimentoService} from '../services/estabelecimento.service';
 export class EstabelecimentoComponent implements OnInit {
 
   estabelecimentoForm: FormGroup;
+  estabelecimentoInvalid = false
   submitted = false;
   success = false;
   categorias = [{'nome': 'Entretendimento', 'id': 1},
@@ -19,17 +21,18 @@ export class EstabelecimentoComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private storageService: StorageService,
-              private estabelecimentoService: EstabelecimentoService) {
+              private estabelecimentoService: EstabelecimentoService,
+              private geolocationService: GeolocationService) {
   }
 
   ngOnInit() {
     this.estabelecimentoForm = this.formBuilder.group({
-      nome: ['', [Validators.required, Validators.minLength(6)]],
-      sobrenome: ['', [Validators.required, Validators.minLength(6)]],
-      telefone: ['', [Validators.required, Validators.minLength(6)]],
+      nome: ['', [Validators.required, Validators.minLength(1)]],
+      sobrenome: ['', [Validators.required, Validators.minLength(1)]],
+      telefone: ['', [Validators.required, Validators.minLength(10)]],
       email: ['', [Validators.required, Validators.email]],
-      cnpj: ['', [Validators.required, Validators.minLength(6)]],
-      categoria: ['', [Validators.required, Validators.minLength(6)]],
+      cnpj: ['', [Validators.required, Validators.minLength(10)]],
+      categoria: ['', Validators.required],
     });
 
     console.log(this.storageService.getItem('tipo'));
@@ -41,10 +44,17 @@ export class EstabelecimentoComponent implements OnInit {
     console.log(this.estabelecimentoForm.value);
 
     if (this.estabelecimentoForm.invalid) {
+      this.estabelecimentoInvalid = true
       return;
     } else {
-      let dados = this.estabelecimentoForm.value;
-      this.estabelecimentoService.salvar(dados).subscribe(result => console.log(result));
+      this.geolocationService.getGeolocation().then(pos => {
+        this.estabelecimentoInvalid = false
+        this.storageService.setItem("position", pos);
+        let dados = this.estabelecimentoForm.value;
+        this.estabelecimentoService.salvar(dados).subscribe(result => console.log(result));
+      })
+
+
     }
 
     this.success = true;
