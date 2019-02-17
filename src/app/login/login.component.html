@@ -2,7 +2,7 @@
 
 <div class="row between-xs login-container">
 
-  <div class="card-login">
+  <div class="card card-login">
     <h2>TITULAR</h2>
     <form [formGroup]="formTitular" (ngSubmit)="saveTitular()">
       <label class="lbl-login" for="txbEmailTitular">E-mail:</label>
@@ -14,7 +14,7 @@
       <div *ngIf="titularInvalid" style="color: #ff0000">Dados inválidos</div>
     </form>
   </div>
-  <div class="card-login">
+  <div class="card card-login">
     <h2>ESTABELECIMENTO</h2>
     <form [formGroup]="formEstabelecimento" (ngSubmit)="saveEstabelecimento()">
       <label class="lbl-login" for="txbEmailEstabelecimento">E-mail:</label>

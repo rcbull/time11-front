@@ -14,6 +14,7 @@ export class CobrancaComponent implements OnInit {
   elementType: 'url' | 'canvas' | 'img' = 'url';
   value = "VALOR"
   qrCodeGenerated = false;
+  qrCodeConfirmed = false;
   mensagem: string;
   formCobranca: FormGroup;
   submitted = false;
@@ -36,7 +37,22 @@ export class CobrancaComponent implements OnInit {
     this.qrCodeGenerated = true;
     value: this.formCobranca.value.valor;
 
-    // this.verifica().subscribe(t => {
-    //   console.log(t)});
+    this.updateCobranca();
+  }
+
+  updateCobranca(){ 
+    setTimeout(() => {
+      this.qrCodeConfirmed = true; 
+    }, 2000);
+    
+    setTimeout(() => {
+      this.reset()
+    }, 3500); // RESETA FORMULÁRIO DEPOIS DE 1,5 SEGUNDO DA CONFIRMAÇÃO
+    
+  }
+
+  reset() {
+    this.qrCodeGenerated = false;
+    this.qrCodeConfirmed = false;
   }
 }
