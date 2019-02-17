@@ -12,15 +12,6 @@
 
 .card-estabelecimento {
     width: 38%;
-    margin: 50px auto;
-}
-
-.lbl-field {
-    text-align: right;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 40px;
 }
 
 .fix-height {

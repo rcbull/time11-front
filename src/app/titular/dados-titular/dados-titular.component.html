@@ -1,5 +1,26 @@
 <app-header></app-header>
+<form [formGroup]="dadosTitularForm" class="row card card-dados-titular" (ngSubmit)="save()">
+  
+  <h1 class="col-xs-12">MEUS DADOS</h1>
 
-<p>
-  Dados Titular
-</p>
+  <label class="col-xs-3 lbl-field" for="txbNome">Nome:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbNome" formControlName="nome">
+
+  <label class="col-xs-3 lbl-field" for="txbSobrenome">Sobrenome:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbSobrenome" formControlName="sobrenome">
+
+  <label class="col-xs-3 lbl-field" for="txbTelefone">Telefone:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbTelefone" formControlName="telefone">
+
+  <label class="col-xs-3 lbl-field" for="txbEmail">Email:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbEmail" formControlName="email">
+
+  <label class="col-xs-3 lbl-field" for="txbCPF">CPF:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbCPF" formControlName="cpf">
+
+  <div class="btn-holder">
+      <a routerLink="/titular" class="btn">Voltar</a>
+      <input type="submit" class="btn fix-height" value="Salvar">
+  </div>
+  <div *ngIf="dadosTitularInvalid" style="color: #ff0000">Dados inválidos</div>
+</form>

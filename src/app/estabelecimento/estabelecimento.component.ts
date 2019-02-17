@@ -52,8 +52,7 @@ export class EstabelecimentoComponent implements OnInit {
         this.storageService.setItem("position", JSON.stringify(pos));
         let dados = this.estabelecimentoForm.value;
         this.estabelecimentoService.salvar(dados).subscribe(result => console.log(result));
-      })
-
+      });
 
     }
 
