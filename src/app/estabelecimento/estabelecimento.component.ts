@@ -13,8 +13,8 @@ export class EstabelecimentoComponent implements OnInit {
   submitted = false;
   success = false;
   categorias = [{'nome': 'Entretendimento', 'id': 1},
-    {'nome': 'Cinema', 'id': 2},
-    {'nome': 'Cantina', 'id': 3}];
+    {'nome': 'Transporte', 'id': 2},
+    {'nome': 'Alimentação', 'id': 3}];
 
   constructor(private formBuilder: FormBuilder,
               private storageService: StorageService) {

@@ -5,6 +5,8 @@ import {map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 
 import {AgmCoreModule} from '@agm/core';
+import {GeolocationService} from '../../services/geolocation.service';
+import {StorageService} from '../../services/storage.service';
 
 @Component({
   selector: 'app-mapa',
@@ -18,7 +20,9 @@ export class MapaComponent implements OnInit {
   zoom: number = 15;
   estabelecimentos = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private geolocationService: GeolocationService,
+              private storageService: StorageService) {
   }
 
   ngOnInit() {
@@ -31,12 +35,14 @@ export class MapaComponent implements OnInit {
 
     this.estabelecimentos.push({lat: this.lat, lng: this.lng, label: this.texto});
 
-
+    this.geolocationService.getGeolocation().then(pos => {
+      this.storageService.setItem("position", pos);
+      console.log(pos);
+    })
   }
 
   getEstabelecimentos(): Observable<any> {
-    console.log('getEstabelecimentos');
-    return this.http.get<any>(`${environment.api}/`)
+    return this.http.get<any>(`${environment.api}/estabelecimentos`)
       .pipe(map(response => {
         if (response.status == 400) {
 

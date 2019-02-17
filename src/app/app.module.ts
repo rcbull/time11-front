@@ -18,6 +18,10 @@ import {AgmCoreModule} from '@agm/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CobrancaComponent} from './cobranca/cobranca.component';
 import { FooterTitularComponent } from './titular/footer-titular/footer-titular.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DependenteModalComponent } from './titular/dependente-modal/dependente-modal.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { FooterTitularComponent } from './titular/footer-titular/footer-titular.
     MovItemComponent,
     HeaderTitularComponent,
     CobrancaComponent,
-    FooterTitularComponent
+    FooterTitularComponent,
+    DependenteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,11 @@ import { FooterTitularComponent } from './titular/footer-titular/footer-titular.
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
