@@ -14,17 +14,18 @@ import {MapaComponent} from './titular/mapa/mapa.component';
 import {HeaderComponent} from './header/header.component';
 import {MovItemComponent} from './extrato/mov-item/mov-item.component';
 import {HeaderTitularComponent} from './titular/header-titular/header-titular.component';
+import {HeaderExtratoComponent} from './extrato-estabelecimento/header-extrato/header-extrato.component';
 import {AgmCoreModule} from '@agm/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CobrancaComponent} from './cobranca/cobranca.component';
-import { FooterTitularComponent } from './titular/footer-titular/footer-titular.component';
+import {FooterTitularComponent} from './titular/footer-titular/footer-titular.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
-import { DependenteModalComponent } from './titular/dependente-modal/dependente-modal.component';
-import { ExtratoEstabelecimentoComponent } from './extrato-estabelecimento/extrato-estabelecimento.component';
-import { AdicionarDependenteComponent } from './adicionar-dependente/adicionar-dependente.component';
-import { DadosTitularComponent } from './titular/dados-titular/dados-titular.component';
+import {DependenteModalComponent} from './titular/dependente-modal/dependente-modal.component';
+import {ExtratoEstabelecimentoComponent} from './extrato-estabelecimento/extrato-estabelecimento.component';
+import {AdicionarDependenteComponent} from './adicionar-dependente/adicionar-dependente.component';
+import {DadosTitularComponent} from './titular/dados-titular/dados-titular.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DadosTitularComponent } from './titular/dados-titular/dados-titular.com
     TitularComponent,
     MapaComponent,
     HeaderComponent,
+    HeaderExtratoComponent,
     MovItemComponent,
     HeaderTitularComponent,
     CobrancaComponent,
@@ -59,8 +61,7 @@ import { DadosTitularComponent } from './titular/dados-titular/dados-titular.com
     MatCheckboxModule,
     MatDialogModule
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
