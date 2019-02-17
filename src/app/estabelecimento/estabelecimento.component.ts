@@ -49,7 +49,7 @@ export class EstabelecimentoComponent implements OnInit {
     } else {
       this.geolocationService.getGeolocation().then(pos => {
         this.estabelecimentoInvalid = false
-        this.storageService.setItem("position", pos);
+        this.storageService.setItem("position", JSON.stringify(pos));
         let dados = this.estabelecimentoForm.value;
         this.estabelecimentoService.salvar(dados).subscribe(result => console.log(result));
       })
