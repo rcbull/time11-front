@@ -13,6 +13,7 @@ export class TitularComponent implements OnInit {
   mostrarDetalhes = false;
   titularDados: any;
   sucess = false
+  dependentes: any
 
   constructor(private titularService: TitularService,
               private storageService: StorageService) {
@@ -26,6 +27,7 @@ export class TitularComponent implements OnInit {
       .subscribe(response => {
         console.log(response);
         this.titularDados = response;
+        this.dependentes = this.titularDados.dependentes
       });
   }
 
