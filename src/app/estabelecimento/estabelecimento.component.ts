@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {StorageService} from '../services/storage.service';
+import {EstabelecimentoService} from '../services/estabelecimento.service';
 
 @Component({
   selector: 'app-estabelecimento',
@@ -17,7 +18,8 @@ export class EstabelecimentoComponent implements OnInit {
     {'nome': 'Alimentação', 'id': 3}];
 
   constructor(private formBuilder: FormBuilder,
-              private storageService: StorageService) {
+              private storageService: StorageService,
+              private estabelecimentoService: EstabelecimentoService) {
   }
 
   ngOnInit() {
@@ -40,6 +42,9 @@ export class EstabelecimentoComponent implements OnInit {
 
     if (this.estabelecimentoForm.invalid) {
       return;
+    } else {
+      let dados = this.estabelecimentoForm.value;
+      this.estabelecimentoService.salvar(dados).subscribe(result => console.log(result));
     }
 
     this.success = true;
