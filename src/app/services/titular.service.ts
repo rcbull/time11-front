@@ -14,8 +14,7 @@ export class TitularService {
   consultarTitular(email: string) {
     return this.http.get<any>(`${environment.api}/titulares/email/${email}`)
       .pipe(map(response => {
-          console.log(response);
-          return false;
+          return response;
         })
       );
   }

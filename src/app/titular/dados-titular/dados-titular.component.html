@@ -19,17 +19,9 @@
   <input class="col-xs-8 input-field" type="text" id="txbCPF" formControlName="cpf">
 
   <label class="col-xs-3 lbl-field" for="txbCPF">Dependentes:</label>
-  <div class="dependente-holder col-xs-8 input-field">
-    <div class="dependente-item">
-      <p>Joãozinho</p>
-      <div class="dependente-close">&times;</div>
-    </div>
-    <div class="dependente-item">
-      <p>Maria</p>
-      <div class="dependente-close">&times;</div>
-    </div>
-    <div class="dependente-item">
-      <p>Teste Teste</p>
+  <div class="dependente-holder col-xs-8 input-field" *ngIf="titularDados" >
+    <div class="dependente-item" *ngFor="let dependente of titularDados.dependentes">
+      <p>{{ dependente.nome }} {{ dependente.sobrenome }}</p>
       <div class="dependente-close">&times;</div>
     </div>
   </div>
