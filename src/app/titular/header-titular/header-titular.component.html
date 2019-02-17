@@ -1,29 +1,29 @@
-<div class="row header-titular around-xr">
-  <div class="logo">
-    <img src="../../assets/img/pk-wallet-logo.png" />
-  </div>
-  <div class="col-xs-5 periodo-holder">
-    <input type="date" class="date-filter white-hover" value="{{dataInicial}}"/>
-    <p class="margin-fix-text">até</p> <input type="date" class="date-filter white-hover" value="{{dataFinal}}"/>
-  </div>
-  <div class="filter-holder col-xs-2 dependente-holder">
-    <a routerLink="/meus-dados" class="btn-dependente white-hover">Meus dados</a> <!-- TODO: Linkar dependente -->
-  </div>
-  <div class="col-xs-3 extrato-filter-holder">
-    <div class="filter-holder">
-      <div class="filter-title">
-        FILTROS:
-      </div>
-      <select class="white-hover">
-        <option>Selecione: CATEGORIA</option>
-        <option *ngFor="let cat of categorias" value="cat.id">{{ cat.nome }}</option>
-      </select>
-
-      <select class="white-hover" *ngIf="listadependentes">
-        <option>Selecione: DEPENDENTE</option>
-        <option *ngFor="let dep of listadependentes" value="dep.nome">{{ dep.nome }}</option>
-      </select>
+<form [formGroup]="filtroForm">
+  <div class="row header-titular around-xr">
+    <div class="logo"><img src="../../assets/img/pk-wallet-logo.png" /></div>
+    <div class="col-xs-5 periodo-holder">
+      <input type="date" class="date-filter white-hover" value="{{dataInicial}}" formControlName="dataInicial"/>
+      <p class="margin-fix-text">até</p> <input type="date" class="date-filter white-hover" value="{{dataFinal}}"
+                                                formControlName="dataFinal"/>
     </div>
-    <button class="btn-filtrar white-hover" mat-raised-button (click)="openDialog()">Filtrar</button>
+    <div class="filter-holder col-xs-2 dependente-holder">
+      <a routerLink="/meus-dados" class="btn-dependente white-hover">Meus dados</a>
+    </div>
+    <div class="col-xs-3 extrato-filter-holder">
+      <div class="filter-holder">
+        <div class="filter-title">
+          FILTROS:
+        </div>
+        <select class="white-hover" formControlName="categoria" ngmodel="categoria">
+          <option>Selecione: CATEGORIA</option>
+          <option *ngFor="let cat of categorias">{{ cat.nome }}</option>
+        </select>
+        <select class="white-hover" *ngIf="listadependentes" formControlName="dependente" ngmodel="dependente">
+          <option>Selecione: DEPENDENTE</option>
+          <option *ngFor="let dep of listadependentes">{{ dep.nome }}</option>
+        </select>
+      </div>
+      <button class="btn-filtrar white-hover" mat-raised-button (click)="pesquisar()">Filtrar</button>
+    </div>
   </div>
-</div>
+</form>

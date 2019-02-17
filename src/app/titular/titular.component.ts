@@ -53,4 +53,8 @@ export class TitularComponent implements OnInit {
       this.sucess = false;
     }, 3000);
   }
+
+  getFiltro(data: any) {
+    console.log(data);
+  }
 }
