@@ -1,16 +1,23 @@
-<form [formGroup]="estabelecimentoForm" (ngSubmit)="save()">
+<app-header></app-header>
+<form [formGroup]="estabelecimentoForm" class="row card-estabelecimento" (ngSubmit)="save()">
+  
+  <h1 class="col-xs-12">ESTABELECIMENTO</h1>
   <h5 *ngIf="success">Your form is valid!</h5>
 
-  <label>Nome</label>
-  <input type="text" formControlName="nome"><br/>
-  <label>CNPJ</label>
-  <input type="text" formControlName="cnpj"><br/>
-  <label>Categorias</label>
-  <select>
+  <label class="col-xs-3 lbl-field" for="txbNome">Nome:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbNome" formControlName="nome">
+
+  <label class="col-xs-3 lbl-field" for="txbCNPJ">CNPJ:</label>
+  <input class="col-xs-8 input-field" type="text" id="txbCNPJ" formControlName="cnpj">
+
+  <label class="col-xs-3 lbl-field" for="ddlCategorias">Categorias:</label>
+  <select id="ddlCategorias" class="input-field col-xs-8">
     <option *ngFor="let cat of categorias" value={{cat.id}}>
       {{cat.nome}}
     </option>
   </select>
-
-  <input type="submit" value="Salvar">
+  <div class="btn-holder">
+      <a routerLink="/login" class="btn">Voltar</a>
+      <input type="submit" class="btn fix-height" value="Salvar"> <!-- TODO: SUBMIT -->
+  </div>
 </form>
