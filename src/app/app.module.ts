@@ -24,6 +24,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DependenteModalComponent } from './titular/dependente-modal/dependente-modal.component';
 import { ExtratoEstabelecimentoComponent } from './extrato-estabelecimento/extrato-estabelecimento.component';
 import { AdicionarDependenteComponent } from './adicionar-dependente/adicionar-dependente.component';
+import { DadosTitularComponent } from './titular/dados-titular/dados-titular.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AdicionarDependenteComponent } from './adicionar-dependente/adicionar-d
     FooterTitularComponent,
     DependenteModalComponent,
     ExtratoEstabelecimentoComponent,
-    AdicionarDependenteComponent
+    AdicionarDependenteComponent,
+    DadosTitularComponent
   ],
   imports: [
     BrowserModule,
