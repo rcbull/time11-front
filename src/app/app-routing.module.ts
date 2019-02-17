@@ -8,6 +8,7 @@ import {LoginComponent} from './login/login.component';
 import {TitularComponent} from './titular/titular.component';
 import {CobrancaComponent} from './cobranca/cobranca.component';
 import {ExtratoEstabelecimentoComponent} from './extrato-estabelecimento/extrato-estabelecimento.component';
+import {DadosTitularComponent} from './titular/dados-titular/dados-titular.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'titular',
     component: TitularComponent
+  },
+  {
+    path: 'dados-titular',
+    component: DadosTitularComponent
   },
   {
     path: 'cobranca',
