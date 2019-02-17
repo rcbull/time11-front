@@ -82,7 +82,7 @@ select option {
 }
 
 .margin-fix-text {
-    margin: auto 5px;
+    margin: 5px 5px 0;
 }
 
 .filter-title {

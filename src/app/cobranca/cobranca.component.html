@@ -1,14 +1,26 @@
-<form [formGroup]="formCobranca" (ngSubmit)="saveCobranca()">
-  <label class="lbl-login" for="txbValor">Valor:</label>
-  <input id="txbValor" type="text" formControlName="valor"/>
-  <div class="btn-holder">
-    <button>Cobrar</button>
-  </div>
-  <br/>
-  <div *ngIf="mensagem" style="color: #ff0000">{{ mensagem }}</div>
-</form>
+<app-header></app-header>
 
-<div *ngIf="qrCodeGenerated">
-  <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="value">
-  </ngx-qrcode>
+<div class="cobranca-container">
+  <form class="card row form-cobranca" [formGroup]="formCobranca" (ngSubmit)="saveCobranca()">
+    <h2 class="col-xs-12">COBRANÇA</h2>
+
+    <label class="lbl-login col-xs-3" for="txbValor">Valor:</label>
+    <input id="txbValor" class="col-xs-8 input-field" type="text" formControlName="valor"/>
+
+    <div class="btn-holder">
+      <button class="btn">Cobrar</button>
+    </div>
+    <br/>
+    <div *ngIf="mensagem" style="color: #ff0000">{{ mensagem }}</div>
+  </form>
+
+  <div class="bg-cover" *ngIf="qrCodeGenerated"></div>
+
+  <div class="modal" *ngIf="qrCodeGenerated">
+    <ngx-qrcode class="qr-code" [qrc-element-type]="elementType" [qrc-value]="value">
+    </ngx-qrcode>
+    <p class="qr-code-tip" *ngIf="!qrCodeConfirmed">Aponte seu telefone para esta tela<br/> e aguarde a confirmação</p>
+    <p class="qr-code-success" *ngIf="qrCodeConfirmed">Sucesso!</p>
+  </div>
+
 </div>
