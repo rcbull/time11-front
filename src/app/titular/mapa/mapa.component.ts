@@ -30,7 +30,7 @@ export class MapaComponent implements OnInit {
   ngOnInit() {
     
     this.estabelecimentoService.getEstabelecimentos().subscribe(result => {
-      console.log(result);
+      this.estabelecimentos = result;
     },
     error => {
       console.log(error);
@@ -38,7 +38,7 @@ export class MapaComponent implements OnInit {
 
     this.estabelecimentos.push({lat: this.lat, lng: this.lng, label: this.texto},
       {lat: -22.0223506, lng: -47.8941017, label: 'Café Novolab'});
-
+    
     this.geolocationService.getGeolocation().then(pos => {
       this.storageService.setItem('position', JSON.stringify(pos));
       console.log(pos);

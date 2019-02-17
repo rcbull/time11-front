@@ -1,6 +1,6 @@
 <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng" [zoomControl]="true"
          [zoomControlOptions]="{position: 'TOP_CENTER'}">
   <!--<agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>-->
-  <agm-marker *ngFor="let data of estabelecimentos" [latitude]="+data.lat" [longitude]="+data.lng" [label]="data.label">
+  <agm-marker *ngFor="let est of estabelecimentos" [latitude]="+est.latitude" [longitude]="+est.longitude" [label]="est.nome">
   </agm-marker>
 </agm-map>
