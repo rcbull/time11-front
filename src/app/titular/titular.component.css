@@ -12,6 +12,8 @@
 }
 
 .extrato-holder {
-    position: relative;
-    left: 75%;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
 }

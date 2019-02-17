@@ -1,4 +1,22 @@
-<div class="row header-titular">
+<div class="row header-titular around-xr">
     <div class="logo">m</div>
-  
+    <div class="filter-holder col-xs-4 periodo-holder">
+        <input type="date" class="date-filter white-hover" /> <p class="margin-fix-text">até</p> <input type="date" class="date-filter white-hover" />
+    </div>
+    <div class="filter-holder col-xs-3 dependente-holder">
+        <a routerLink="/" class="btn-dependente white-hover">Adicionar dependente</a> <!-- TODO: Linkar dependente -->
+    </div>
+    <div class="filter-holder col-xs-3 extrato-filter-holder">
+        <div class="filter-title">
+            FILTROS:
+        </div>
+        <select class="white-hover">
+            <option>Selecione: CATEGORIA</option> <!-- TODO: Integrar -->
+        </select>
+        
+        <select class="white-hover">
+            <option>Selecione: DEPENDENTE</option> <!-- TODO: Integrar -->
+            <option>Joãozinho</option>
+        </select>
+    </div>
 </div>

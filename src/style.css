@@ -29,3 +29,12 @@ body {
   position: relative;
   height: 100%;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover{
+  background: rgba(255, 255, 255, 0.5);
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}

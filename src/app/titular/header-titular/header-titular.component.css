@@ -6,4 +6,86 @@
     background: linear-gradient(-90deg,#ff585a,#f857a5);
     height: 100px;
     margin: 0;
+    color: #ffffff;
+}
+
+.filter-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+select {
+    position: relative;
+    padding: 0 10px 0 20px;
+    width: 66%;
+    height: 1.6em;
+    margin: 7px 0 0 0;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 3em;
+    outline: none;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+select option {
+    background: rgba(255, 255, 255, 0.3);
+    color: #000;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.extrato-filter-holder {
+    flex-direction: column;
+}
+
+.btn-dependente {
+    position: relative;
+    padding: 0 20px;
+    height: 1.6em;
+    margin: 7px 0 0 0;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 3em;
+    outline: none;
+    font-size: 1em;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.date-filter {
+    position: relative;
+    padding: 0 10px 0 20px;
+    width: 145px;
+    height: 1.6em;
+    margin: 7px 0 0 0;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 3em;
+    outline: none;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.white-hover {
+    transition: all ease-in-out 0.1s;
+    cursor: pointer;
+}
+
+.white-hover:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.margin-fix-text {
+    margin: auto 5px;
+}
+
+.filter-title {
+    font-size: 1.1em;
+    font-weight: bold;
 }

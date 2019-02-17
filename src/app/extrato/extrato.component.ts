@@ -9,18 +9,22 @@ export class ExtratoComponent implements OnInit {
 
   movimentos = [
     {
-    "desc": "Descrição",
-      "valor": "100,00"
-  },{
-    "desc": "Descrição",
-      "valor": "100,00"
-  }, {
-      'desc': 'Descrição',
-      'valor': '100,00'
+      "dependente": "Joãozinho",
+      "desc": "Lan House",
+      "valor": "80,00"
     },{
-      'desc': 'Descrição',
-      'valor': '100,00'
-    }]
+      "dependente": "Maria",
+      "desc": "Lanche",
+      "valor": "100,00"
+    }, {
+      "dependente": "Maria",
+      "desc": "Skin do Fortnite",
+      "valor": "15,00"
+    },{
+      "dependente": "Joãozinho",
+      "desc": "Balas",
+      "valor": "100,00"
+    }];
 
   total: number
   constructor() {
