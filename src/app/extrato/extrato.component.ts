@@ -8,38 +8,20 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ExtratoComponent implements OnInit {
 
   @Input() pageTitular: boolean;
-
-  movimentos = [
-    {
-      'dependente': 'Joãozinho',
-      'desc': 'Lan House',
-      'valor': 80.00
-    }, {
-      'dependente': 'Maria',
-      'desc': 'Lanche',
-      'valor': 100.00
-    }, {
-      'dependente': 'Maria',
-      'desc': 'Skin do Fortnite',
-      'valor': 15.00
-    }, {
-      'dependente': 'Joãozinho',
-      'desc': 'Balas',
-      'valor': 100.00
-    }];
-
+  @Input() movimentacoes = [];
   total: number;
 
   constructor() {
   }
 
   ngOnInit() {
-
-    this.total = this.movimentos.reduce(
-      function (sum, current) {
-        return sum + current.valor;
-      }, 0
-    );
+    if (this.movimentacoes) {
+      this.total = this.movimentacoes.reduce(
+        function (sum, current) {
+          return sum + current.valor;
+        }, 0
+      );
+    }
   }
 
 }

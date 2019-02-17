@@ -20,6 +20,8 @@ export class CobrancaComponent implements OnInit {
   submitted = false;
   success = false;
   stopCondition = false;
+  descricao = 'Paçocas';
+  valor = '10.00';
 
   constructor(private formBuilder: FormBuilder,
               public cobrancaService: CobrancaService) {
@@ -27,7 +29,10 @@ export class CobrancaComponent implements OnInit {
 
   ngOnInit() {
     this.formCobranca = this.formBuilder.group(
-      {valor: ['', [Validators.required]]}
+      {
+        valor: ['', [Validators.required]],
+        descricao: ['', [Validators.required]]
+      }
     );
   }
 

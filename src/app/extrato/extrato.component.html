@@ -1,8 +1,8 @@
 <app-header *ngIf="!pageTitular"></app-header>
 
-<div class="extrato-container">
+<div class="extrato-container" *ngIf="movimentacoes">
   <h1 class="extrato-title" *ngIf="!pageTitular">EXTRATO</h1>
-  <app-mov-item *ngFor="let m of movimentos" [valor]="m.valor" [desc]="m.desc"></app-mov-item>
+  <app-mov-item *ngFor="let m of movimentacoes" [valor]="m.valor" [desc]="m.dataHora"></app-mov-item>
   <div class="total">
     <p>Total: <b>{{ total | currency:'USD':true:'1.2-2'}}</b></p>
   </div>

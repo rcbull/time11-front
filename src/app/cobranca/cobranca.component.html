@@ -5,7 +5,12 @@
     <h2 class="col-xs-12">COBRANÇA</h2>
 
     <label class="lbl-login col-xs-3" for="txbValor">Valor:</label>
-    <input id="txbValor" class="col-xs-8 input-field" type="text" formControlName="valor"/>
+    <input id="txbValor" class="col-xs-8 input-field" type="text"
+           formControlName="valor" value="valor"/>
+
+    <label class="lbl-login col-xs-3" for="txbDescricao">Descrição:</label>
+    <input id="txbDescricao" class="col-xs-8 input-field" type="text"
+           formControlName="descricao" value="descricao"/>
 
     <div class="btn-holder">
       <button class="btn">Cobrar</button>

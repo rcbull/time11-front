@@ -28,8 +28,15 @@ export class EstabelecimentoService {
   getEstabelecimentos(): Observable<any> {
     return this.http.get<any>(`${environment.api}/estabelecimentos`)
       .pipe(map(response => {
-          console.log(response);
-          return false;
+          return response;
+        })
+      );
+  }
+
+  getMovimentacoes(): Observable<any> {
+    return this.http.get<any>(`${environment.api}/movimentacoes`)
+      .pipe(map(response => {
+          return response;
         })
       );
   }

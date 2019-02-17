@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TitularService} from '../services/titular.service';
+import {EstabelecimentoService} from '../services/estabelecimento.service';
 import {StorageService} from '../services/storage.service';
 import bugsnagClient from '../BugsnagCliente';
 
@@ -15,8 +16,10 @@ export class TitularComponent implements OnInit {
   titularDados: any;
   sucess = false;
   dependentes: any;
+  movimentos: any;
 
   constructor(private titularService: TitularService,
+              private estabelecimentoService: EstabelecimentoService,
               private storageService: StorageService) {
   }
 
@@ -31,6 +34,11 @@ export class TitularComponent implements OnInit {
           this.dependentes = this.titularDados.dependentes;
         },
         error => bugsnagClient.notify(new Error('Test error')));
+
+    this.estabelecimentoService.getMovimentacoes().subscribe(response => {
+        this.movimentos = response;
+      },
+      error => bugsnagClient.notify(new Error('Test error')));
   }
 
   fecharNotificacao() {
