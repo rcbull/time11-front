@@ -1,7 +1,7 @@
 <app-header-extrato></app-header-extrato>
 
 <div class="extrato-container">
-  <app-mov-item *ngFor="let m of movimentos" [valor]="m.valor" [desc]="m.desc" [dependente]="m.dependente.nome"></app-mov-item>
+  <app-mov-item *ngFor="let m of movimentos" [valor]="m.valor" [desc]="m.dataHora" [dependente]="m.dependente.nome"></app-mov-item>
   <div class="total">
     <p>Total: {{ total | currency:'USD':true:'1.2-2'}}</p>
   </div>
