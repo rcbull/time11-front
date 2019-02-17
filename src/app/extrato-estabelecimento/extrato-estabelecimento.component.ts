@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import bugsnagClient from '../BugsnagCliente';
+import {EstabelecimentoService} from '../services/estabelecimento.service';
 
 @Component({
   selector: 'app-extrato-estabelecimento',
@@ -7,31 +9,24 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ExtratoEstabelecimentoComponent implements OnInit {
 
-  movimentos = [
-    {
-      'dependente': 'Joãozinho',
-      'desc': 'Lan House',
-      'valor': 80.00
-    }, {
-      'dependente': 'Maria',
-      'desc': 'Lanche',
-      'valor': 100.00
-    }, {
-      'dependente': 'Maria',
-      'desc': 'Skin do Fortnite',
-      'valor': 15.00
-    }, {
-      'dependente': 'Joãozinho',
-      'desc': 'Balas',
-      'valor': 100.00
-    }];
-
+  movimentos = [];
   total: number;
 
-  constructor() {
+  constructor(private estabelecimentoService: EstabelecimentoService) {
   }
 
   ngOnInit() {
+
+    this.estabelecimentoService.getMovimentacoes().subscribe(response => {
+        this.movimentos = response;
+
+        this.total = this.movimentos.reduce(
+          function (sum, current) {
+            return sum + current.valor;
+          }, 0
+        );
+      },
+      error => bugsnagClient.notify(new Error('Test error')));
 
     this.total = this.movimentos.reduce(
       function (sum, current) {
