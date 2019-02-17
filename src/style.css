@@ -23,6 +23,7 @@ body {
   font-size: 47px;
   text-align: center;
   line-height: 74px;
+  user-select: none;
 }
 
 .full-height {
@@ -134,4 +135,13 @@ input[type="date"]::-webkit-inner-spin-button {
   align-items: center;
   justify-content: flex-end;
   height: 40px;
+}
+
+.white-hover {
+  transition: all ease-in-out 0.1s;
+  cursor: pointer;
+}
+
+.white-hover:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
 }

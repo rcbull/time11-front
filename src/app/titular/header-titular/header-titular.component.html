@@ -1,24 +1,26 @@
 <div class="row header-titular around-xr">
   <div class="logo">m</div>
-  <div class="filter-holder col-xs-4 periodo-holder">
+  <div class="col-xs-5 periodo-holder">
     <input type="date" class="date-filter white-hover" value="{{dataInicial}}"/>
     <p class="margin-fix-text">até</p> <input type="date" class="date-filter white-hover" value="{{dataFinal}}"/>
   </div>
-  <div class="filter-holder col-xs-3 dependente-holder">
+  <div class="filter-holder col-xs-2 dependente-holder">
     <a routerLink="/meus-dados" class="btn-dependente white-hover">Meus dados</a> <!-- TODO: Linkar dependente -->
   </div>
-  <div class="filter-holder col-xs-3 extrato-filter-holder">
-    <div class="filter-title">
-      FILTROS:
+  <div class="col-xs-3 extrato-filter-holder">
+    <div class="filter-holder">
+        <div class="filter-title">
+          FILTROS:
+        </div>
+        <select class="white-hover">
+          <option>Selecione: CATEGORIA</option> <!-- TODO: Integrar -->
+        </select>
+    
+        <select class="white-hover">
+          <option>Selecione: DEPENDENTE</option> <!-- TODO: Integrar -->
+          <option>Joãozinho</option>
+        </select>
     </div>
-    <select class="white-hover">
-      <option>Selecione: CATEGORIA</option> <!-- TODO: Integrar -->
-    </select>
-
-    <select class="white-hover">
-      <option>Selecione: DEPENDENTE</option> <!-- TODO: Integrar -->
-      <option>Joãozinho</option>
-    </select>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
+    <button class="btn-filtrar white-hover" mat-raised-button (click)="openDialog()">Filtrar</button>
   </div>
 </div>

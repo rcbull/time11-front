@@ -13,12 +13,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.periodo-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 select {
     position: relative;
     padding: 0 10px 0 20px;
-    width: 66%;
+    width: 100%;
     height: 1.6em;
     margin: 7px 0 0 0;
     background: transparent;
@@ -36,7 +44,10 @@ select option {
 }
 
 .extrato-filter-holder {
-    flex-direction: column;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .btn-dependente {
@@ -72,15 +83,6 @@ select option {
     font-weight: bold;
 }
 
-.white-hover {
-    transition: all ease-in-out 0.1s;
-    cursor: pointer;
-}
-
-.white-hover:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
 .margin-fix-text {
     margin: 5px 5px 0;
 }
@@ -88,4 +90,13 @@ select option {
 .filter-title {
     font-size: 1.1em;
     font-weight: bold;
+}
+
+.btn-filtrar {
+    height: 54px;
+    margin-top: 26px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    border-radius: 14px;
 }
