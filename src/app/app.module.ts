@@ -28,6 +28,7 @@ import {AdicionarDependenteComponent} from './adicionar-dependente/adicionar-dep
 import {DadosTitularComponent} from './titular/dados-titular/dados-titular.component';
 import bugsnag from '@bugsnag/js';
 import {BugsnagErrorHandler} from '@bugsnag/plugin-angular';
+import { AdminComponentComponent } from './admin-component/admin-component.component';
 
 const bugsnagClient = bugsnag('014e002718adf7c5837ba5af37facb23');
 
@@ -53,7 +54,8 @@ export function errorHandlerFactory() {
     DependenteModalComponent,
     ExtratoEstabelecimentoComponent,
     AdicionarDependenteComponent,
-    DadosTitularComponent
+    DadosTitularComponent,
+    AdminComponentComponent
   ],
   imports: [
     BrowserModule,

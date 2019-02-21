@@ -9,8 +9,24 @@ import {TitularComponent} from './titular/titular.component';
 import {CobrancaComponent} from './cobranca/cobranca.component';
 import {ExtratoEstabelecimentoComponent} from './extrato-estabelecimento/extrato-estabelecimento.component';
 import {DadosTitularComponent} from './titular/dados-titular/dados-titular.component';
+import {AdminComponentComponent} from './admin-component/admin-component.component';
 
 const routes: Routes = [
+  {
+    path: 'admin',
+    component: AdminComponentComponent,
+    children: [{
+      path: 'login',
+      component: LoginComponent,
+      outlet: 'router1'
+    },
+      {
+        path: 'login2',
+        component: LoginComponent,
+        outlet: 'router2'
+      }
+    ]
+  },
   {
     path: '',
     redirectTo: '/login',
